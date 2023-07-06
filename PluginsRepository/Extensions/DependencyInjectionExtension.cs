@@ -9,6 +9,8 @@ public static class DependencyInjectionExtension
         builder.Services.AddMemoryCache();
 
         builder.Services.AddSingleton<IDatabaseConnection, DatabaseConnection>();
+        builder.Services.AddSingleton(typeof(IDataProvider<>), typeof(MongoDataProvider<>));
+
         return builder;
     }
 }
