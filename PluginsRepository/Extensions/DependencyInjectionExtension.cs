@@ -8,6 +8,7 @@ public static class DependencyInjectionExtension
         builder.Services.AddServerSideBlazor();
         builder.Services.AddMemoryCache();
 
+        builder.Services.AddSingleton<IDatabaseConnection, DatabaseConnection>();
         return builder;
     }
 }
